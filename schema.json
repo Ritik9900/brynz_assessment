@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PropertyCaptureOutputContract",
+  "type": "object",
+  "required": [
+    "capture_metadata",
+    "property_footprint",
+    "rooms",
+    "adjacency_graph",
+    "concealed_damage_flags",
+    "scope_line_items"
+  ],
+  "properties": {
+    "capture_metadata": {
+      "type": "object",
+      "required": ["tier", "device_model", "processing_time_seconds", "drift_correction_enabled"],
+      "properties": {
+        "tier": { "type": "string", "enum": ["photos", "video", "lidar"] },
+        "device_model": { "type": "string" },
+        "processing_time_seconds": { "type": "number" },
+        "drift_correction_enabled": { "type": "boolean" }
+      }
+    },
+    "property_footprint": {
+      "type": "object",
+      "required": ["total_floor_area_m2", "confidence_interval"],
+      "properties": {
+        "total_floor_area_m2": { "type": "number" },
+        "confidence_interval": { "$ref": "#/definitions/ConfidenceInterval" }
+      }
+    },
+    "rooms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["room_id", "label", "ceiling_height_m", "floor_area_m2", "walls", "openings", "damage_regions"],
+        "properties": {
+          "room_id": { "type": "string" },
+          "label": { "type": "string" },
+          "ceiling_height_m": { "$ref": "#/definitions/MetricMeasurement" },
+          "floor_area_m2": { "$ref": "#/definitions/MetricMeasurement" },
+          "walls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["wall_id", "start_point", "end_point", "length_m"],
+              "properties": {
+                "wall_id": { "type": "string" },
+                "start_point": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+                "end_point": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+                "length_m": { "$ref": "#/definitions/MetricMeasurement" }
+              }
+            }
+          },
+          "openings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["opening_id", "type", "wall_id", "width_m", "height_m"],
+              "properties": {
+                "opening_id": { "type": "string" },
+                "type": { "type": "string", "enum": ["door", "window", "cased_opening"] },
+                "wall_id": { "type": "string" },
+                "width_m": { "$ref": "#/definitions/MetricMeasurement" },
+                "height_m": { "$ref": "#/definitions/MetricMeasurement" }
+              }
+            }
+          },
+          "damage_regions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["damage_id", "surface_id", "damage_class", "metric_extent_m2", "confidence"],
+              "properties": {
+                "damage_id": { "type": "string" },
+                "surface_id": { "type": "string" },
+                "damage_class": { "type": "string" },
+                "metric_extent_m2": { "$ref": "#/definitions/MetricMeasurement" },
+                "confidence": { "type": "number" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "adjacency_graph": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["room_a", "room_b", "connecting_opening_id"],
+        "properties": {
+          "room_a": { "type": "string" },
+          "room_b": { "type": "string" },
+          "connecting_opening_id": { "type": "string" }
+        }
+      }
+    },
+    "concealed_damage_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["flag_id", "rule_id", "triggering_damage_id", "surface_id", "description", "severity"],
+        "properties": {
+          "flag_id": { "type": "string" },
+          "rule_id": { "type": "string" },
+          "triggering_damage_id": { "type": "string" },
+          "surface_id": { "type": "string" },
+          "description": { "type": "string" },
+          "severity": { "type": "string", "enum": ["low", "medium", "critical"] }
+        }
+      }
+    },
+    "scope_line_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["line_item_id", "surface_id", "xactimate_code", "description", "quantity", "unit", "estimated_cost_usd"],
+        "properties": {
+          "line_item_id": { "type": "string" },
+          "surface_id": { "type": "string" },
+          "xactimate_code": { "type": "string" },
+          "description": { "type": "string" },
+          "quantity": { "type": "number" },
+          "unit": { "type": "string", "enum": ["SF", "LF", "EA"] },
+          "estimated_cost_usd": { "type": "number" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ConfidenceInterval": {
+      "type": "object",
+      "required": ["lower", "upper", "confidence_level"],
+      "properties": {
+        "lower": { "type": "number" },
+        "upper": { "type": "number" },
+        "confidence_level": { "type": "number" }
+      }
+    },
+    "MetricMeasurement": {
+      "type": "object",
+      "required": ["value", "ci"],
+      "properties": {
+        "value": { "type": "number" },
+        "ci": { "$ref": "#/definitions/ConfidenceInterval" }
+      }
+    }
+  }
+}

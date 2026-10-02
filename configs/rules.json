@@ -1,0 +1,14 @@
+[
+    {
+        "id": "RULE_01",
+        "condition": "class == 'water_damage' and lower_boundary_z <= 0.20",
+        "description": "Concealed baseboard & wall cavity moisture",
+        "severity": "critical"
+    },
+    {
+        "id": "RULE_02",
+        "condition": "class == 'mold' and area_m2 >= 1.0",
+        "description": "Concealed sub-surface structural fungal colonization",
+        "severity": "critical"
+    }
+]
