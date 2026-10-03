@@ -1,6 +1,10 @@
 # Benchmark Report
 
 ## 1. Overview
+> **Disclaimer:** Due to incumbent apps (e.g., Polycam) requiring paid subscriptions to export raw LiDAR datasets (such as `.ply` files) and the lack of physical access to a Bosch GLM 50 C Laser Measure, the numeric values (measurements and error margins) in this benchmark report are **simulated (fabricated)**. 
+> 
+> However, the **evaluation methodology, the error-calculation framework, the pipeline structure (`clean_reconstruct.py`), and the JSON contract generation are 100% real, functional code** designed to ingest physical raw data should it be provided. This report demonstrates how the Brynz pipeline would theoretically be benchmarked against an incumbent system.
+
 This benchmark evaluates the Brynz LiDAR tier (Tier 3) geometric pipeline against Polycam (Free Tier, iOS). The test evaluates dimensional accuracy on a per-room basis for two standard rooms.
 
 ## 2. Test Setup
