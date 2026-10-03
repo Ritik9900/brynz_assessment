@@ -1,0 +1,10 @@
+{
+    "rooms": {
+        "room_01": {
+            "ceiling_height_m": 2.45,
+            "openings": [
+                {"id": "door_1", "width_m": 0.91}
+            ]
+        }
+    }
+}

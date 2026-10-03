@@ -1,5 +1,8 @@
-﻿venv/
+venv/
 __pycache__/
 *.ply
 *.mp4
 *.csv
+single_room/
+single_scan_floor_only/
+single_scan_with_ceiling/
