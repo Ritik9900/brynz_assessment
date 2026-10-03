@@ -2,7 +2,7 @@
 
 | Requirement | File Path | Artifact | Status |
 |---|---|---|---|
-| Handheld consumer capture protocol | `docs/capture_protocol.md` | Protocol Document | ✅ Complete |
+| Handheld consumer capture protocol | `docs/protocol_stock.md` | Protocol Document | ✅ Complete |
 | Tier 3: LiDAR processing | `clean_reconstruct.py` | 3D Point Cloud | ✅ Complete |
 | Stitched multi-room plan | `stitch_rooms.py` | Global Pose Graph (`combined_house.ply`) | ✅ Complete |
 | Extracted structural dimensions | `process_ply.py` | CAD walls & ceiling height logic | ✅ Complete |
