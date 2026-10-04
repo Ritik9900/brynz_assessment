@@ -125,9 +125,14 @@ def main():
         z_vals = sliced_points[:, 2]
         
         # Create a 2D histogram density plot (blueprint style)
-        plt.hist2d(x_vals, z_vals, bins=300, cmap='Blues', cmin=1)
+        # Increased bins for higher resolution, increased cmin to filter out noise/furniture
+        plt.hist2d(x_vals, z_vals, bins=500, cmap='Blues', cmin=3, vmax=50)
         
-        plt.title("Rendered 2D Floor Plan (Blueprint Map)", fontsize=16)
+        # Overlay the mathematically extracted walls to visually prove the algorithm's output
+        for i, (p1, p2) in enumerate(walls):
+            plt.plot([p1[0], p2[0]], [p1[1], p2[1]], color='red', linewidth=1.5, alpha=0.7)
+            
+        plt.title("Rendered 2D Floor Plan with Extracted Walls", fontsize=16)
         plt.xlabel("X (meters)", fontsize=12)
         plt.ylabel("Z (meters)", fontsize=12)
         plt.axis('equal')
