@@ -104,14 +104,31 @@ def main():
         
     if args.plot and len(walls) > 0:
         plt.figure(figsize=(8, 8))
+        
+        # Collect all points to compute the Convex Hull (clean floorplan outline)
+        all_points = []
         for p1, p2 in walls:
-            plt.plot([p1[0], p2[0]], [p1[1], p2[1]], 'b-', linewidth=2)
-            plt.scatter([p1[0], p2[0]], [p1[1], p2[1]], c='r')
-        plt.title("Extracted 2D Wall Map")
+            all_points.append(p1)
+            all_points.append(p2)
+        all_points = np.array(all_points, dtype=np.float32)
+        
+        hull = cv2.convexHull(all_points)
+        hull_points = hull.reshape(-1, 2)
+        
+        # Close the polygon by appending the first point at the end
+        hull_points = np.vstack([hull_points, hull_points[0]])
+        
+        # Plot clean filled polygon outline
+        plt.plot(hull_points[:, 0], hull_points[:, 1], 'b-', linewidth=3, label="Room Boundary")
+        plt.fill(hull_points[:, 0], hull_points[:, 1], alpha=0.3, color='blue', label="Walkable Area")
+        plt.scatter(hull_points[:, 0], hull_points[:, 1], c='red', s=50, label="Vertices", zorder=5)
+        
+        plt.title("Extracted 2D Floorplan (Convex Hull)")
         plt.xlabel("X (meters)")
         plt.ylabel("Y (meters)")
         plt.axis('equal')
-        plt.grid(True)
+        plt.grid(True, linestyle='--', alpha=0.7)
+        plt.legend()
         plot_path = "output_walls.png"
         plt.savefig(plot_path)
         print(f"\nSaved 2D floorplan visualization to {plot_path}")
