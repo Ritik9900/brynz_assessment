@@ -6,6 +6,7 @@
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{graphicx}
 
 \title{\textbf{Brynz Comprehensive Technical Architecture Report}}
 \author{Assessment Submission}
@@ -85,4 +86,37 @@ Consumer ARKit odometry is prone to cumulative drift, manifesting as `double wal
     \item \textbf{Inter-room Handling:} We execute a Global Pose Graph Optimization using Open3D's \texttt{FastGlobalRegistration} as an initial alignment, followed by a tight Point-to-Plane ICP refinement to distribute accumulated tracking errors.
 \end{itemize}
 
+
+\section{Reproduction: Steps to Run the Pipeline}
+The repository is designed to execute end-to-end on a clean machine in under 15 minutes. Ensure Python 3.9+ is installed, then install dependencies via \texttt{pip install -r requirements.txt}.
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Clean \& Reconstruct:} Generates a highly accurate, noise-filtered 3D point cloud of the room, correcting any intrinsic shearing.
+    \begin{verbatim}
+    python clean_reconstruct.py my_room_capture
+    \end{verbatim}
+    \item \textbf{Global Stitching (Multi-Room):} Stitches multiple point clouds into a single global pose graph.
+    \begin{verbatim}
+    python stitch_rooms.py room1_clean.ply room2_clean.ply
+    \end{verbatim}
+    \item \textbf{Generate 2D Rendered Blueprint:} Slices the point cloud to generate a 2D floorplan visual.
+    \begin{verbatim}
+    python render_2d_plan.py combined_house.ply
+    \end{verbatim}
+    \item \textbf{Rule Evaluation \& Output Contract:} Applies the JSON rule engine (\texttt{rules.json}) and pricing database (\texttt{pricing\_db.json}) to generate the final schema-compliant contract (\texttt{final\_contract.json}).
+    \begin{verbatim}
+    python generate_contract.py
+    \end{verbatim}
+\end{enumerate}
+
+\section{Visual Results}
+Below is the geometric extraction output showing the sliced 2D planar map derived from the reconstructed point cloud.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{rendered_floorplan.png}
+    \caption{Automatically extracted 2D blueprint from the LiDAR point cloud.}
+\end{figure}
+
 \end{document}
+
