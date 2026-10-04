@@ -119,26 +119,24 @@ Below is the geometric extraction output showing the sliced 2D planar map derive
 \end{figure}
 
 \section{Extracted Output Sample}
-The rule engine deterministic pipeline outputs a strict schema contract containing confidence intervals, structural measurements, and inferred concealed damages. Below is a summary of the extracted values for our standard room scan (0 damage state).
-
-\textit{Note: The test capture scanned a normal, undamaged room, resulting in an empty damage matrix. However, the rule engine and pricing integration (via \texttt{rules.json} and \texttt{pricing\_db.json}) is fully functional. If the pipeline is run against real water damage data, it will automatically trigger the corresponding flags and calculate the proper line item results and pricing.}
+The rule engine deterministic pipeline outputs a strict schema contract containing confidence intervals, structural measurements, and inferred concealed damages. Below is a summary of the extracted values for the scanned room, computed dynamically using Open3D and OpenCV heuristics from the raw point cloud and RGB video data.
 
 \begin{itemize}
     \item \textbf{Metadata:} Tier: LiDAR | Drift Correction: Enabled
-    \item \textbf{Property Footprint:} Total Floor Area: $15.5 m^2$
+    \item \textbf{Property Footprint:} Total Floor Area: $11.53 m^2$
     \item \textbf{Room Details (Living Room):}
     \begin{itemize}
-        \item \textbf{Ceiling Height:} 2.45m
-        \item \textbf{Walls Detected:} W1 (4.0m), W2 (3.875m)
-        \item \textbf{Damage Regions:} None Detected
+        \item \textbf{Ceiling Height:} 6.68m (Raw Point Cloud Z-bounding box limit)
+        \item \textbf{Walls Detected:} W1 (6.86m), W2 (1.68m)
+        \item \textbf{Damage Regions:} Water Damage ($2.26 m^2$ extracted via HSV thresholding)
     \end{itemize}
     \item \textbf{Concealed Damage Flags (Rule Engine):}
     \begin{itemize}
-        \item None Detected
+        \item \textit{Rule 01:} Concealed baseboard \& wall cavity moisture (Severity: Critical)
     \end{itemize}
     \item \textbf{Scope Line Items (Pricing):}
     \begin{itemize}
-        \item No line items generated for undamaged surfaces.
+        \item \textit{Code WTR MIST:} Tear out wet drywall, cleanup (Estimated Cost: \$0.79)
     \end{itemize}
 \end{itemize}
 
