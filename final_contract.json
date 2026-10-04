@@ -5,7 +5,7 @@
         "drift_correction_enabled": true
     },
     "property_footprint": {
-        "total_floor_area_m2": 11.53,
+        "total_floor_area_m2": 5.96,
         "confidence_interval": {
             "lower": -0.05,
             "upper": 0.05,
@@ -17,19 +17,531 @@
             "room_id": "single_room",
             "label": "Extracted Room",
             "ceiling_height_m": {
-                "value": 6.68
+                "value": 1.71
             },
             "floor_area_m2": {
-                "value": 11.53
+                "value": 5.96
             },
             "walls": [
                 {
                     "wall_id": "w1",
-                    "length_m": 6.86
+                    "length_m": 2.93
                 },
                 {
                     "wall_id": "w2",
-                    "length_m": 1.68
+                    "length_m": 2.9
+                },
+                {
+                    "wall_id": "w3",
+                    "length_m": 2.96
+                },
+                {
+                    "wall_id": "w4",
+                    "length_m": 2.98
+                },
+                {
+                    "wall_id": "w5",
+                    "length_m": 1.73
+                },
+                {
+                    "wall_id": "w6",
+                    "length_m": 1.04
+                },
+                {
+                    "wall_id": "w7",
+                    "length_m": 2.03
+                },
+                {
+                    "wall_id": "w8",
+                    "length_m": 2.05
+                },
+                {
+                    "wall_id": "w9",
+                    "length_m": 1.52
+                },
+                {
+                    "wall_id": "w10",
+                    "length_m": 2.04
+                },
+                {
+                    "wall_id": "w11",
+                    "length_m": 1.71
+                },
+                {
+                    "wall_id": "w12",
+                    "length_m": 1.65
+                },
+                {
+                    "wall_id": "w13",
+                    "length_m": 1.99
+                },
+                {
+                    "wall_id": "w14",
+                    "length_m": 1.66
+                },
+                {
+                    "wall_id": "w15",
+                    "length_m": 1.99
+                },
+                {
+                    "wall_id": "w16",
+                    "length_m": 1.99
+                },
+                {
+                    "wall_id": "w17",
+                    "length_m": 1.65
+                },
+                {
+                    "wall_id": "w18",
+                    "length_m": 2.05
+                },
+                {
+                    "wall_id": "w19",
+                    "length_m": 1.71
+                },
+                {
+                    "wall_id": "w20",
+                    "length_m": 1.95
+                },
+                {
+                    "wall_id": "w21",
+                    "length_m": 1.71
+                },
+                {
+                    "wall_id": "w22",
+                    "length_m": 1.62
+                },
+                {
+                    "wall_id": "w23",
+                    "length_m": 1.99
+                },
+                {
+                    "wall_id": "w24",
+                    "length_m": 2.0
+                },
+                {
+                    "wall_id": "w25",
+                    "length_m": 1.66
+                },
+                {
+                    "wall_id": "w26",
+                    "length_m": 1.64
+                },
+                {
+                    "wall_id": "w27",
+                    "length_m": 2.04
+                },
+                {
+                    "wall_id": "w28",
+                    "length_m": 1.65
+                },
+                {
+                    "wall_id": "w29",
+                    "length_m": 1.66
+                },
+                {
+                    "wall_id": "w30",
+                    "length_m": 2.03
+                },
+                {
+                    "wall_id": "w31",
+                    "length_m": 2.05
+                },
+                {
+                    "wall_id": "w32",
+                    "length_m": 1.63
+                },
+                {
+                    "wall_id": "w33",
+                    "length_m": 1.96
+                },
+                {
+                    "wall_id": "w34",
+                    "length_m": 2.02
+                },
+                {
+                    "wall_id": "w35",
+                    "length_m": 1.67
+                },
+                {
+                    "wall_id": "w36",
+                    "length_m": 1.88
+                },
+                {
+                    "wall_id": "w37",
+                    "length_m": 2.0
+                },
+                {
+                    "wall_id": "w38",
+                    "length_m": 1.73
+                },
+                {
+                    "wall_id": "w39",
+                    "length_m": 1.96
+                },
+                {
+                    "wall_id": "w40",
+                    "length_m": 1.52
+                },
+                {
+                    "wall_id": "w41",
+                    "length_m": 1.79
+                },
+                {
+                    "wall_id": "w42",
+                    "length_m": 1.76
+                },
+                {
+                    "wall_id": "w43",
+                    "length_m": 1.82
+                },
+                {
+                    "wall_id": "w44",
+                    "length_m": 1.56
+                },
+                {
+                    "wall_id": "w45",
+                    "length_m": 1.58
+                },
+                {
+                    "wall_id": "w46",
+                    "length_m": 1.22
+                },
+                {
+                    "wall_id": "w47",
+                    "length_m": 1.15
+                },
+                {
+                    "wall_id": "w48",
+                    "length_m": 1.36
+                },
+                {
+                    "wall_id": "w49",
+                    "length_m": 1.79
+                },
+                {
+                    "wall_id": "w50",
+                    "length_m": 1.37
+                },
+                {
+                    "wall_id": "w51",
+                    "length_m": 1.15
+                },
+                {
+                    "wall_id": "w52",
+                    "length_m": 1.24
+                },
+                {
+                    "wall_id": "w53",
+                    "length_m": 1.22
+                },
+                {
+                    "wall_id": "w54",
+                    "length_m": 1.24
+                },
+                {
+                    "wall_id": "w55",
+                    "length_m": 1.57
+                },
+                {
+                    "wall_id": "w56",
+                    "length_m": 1.21
+                },
+                {
+                    "wall_id": "w57",
+                    "length_m": 1.56
+                },
+                {
+                    "wall_id": "w58",
+                    "length_m": 0.99
+                },
+                {
+                    "wall_id": "w59",
+                    "length_m": 1.56
+                },
+                {
+                    "wall_id": "w60",
+                    "length_m": 1.49
+                },
+                {
+                    "wall_id": "w61",
+                    "length_m": 1.55
+                },
+                {
+                    "wall_id": "w62",
+                    "length_m": 1.18
+                },
+                {
+                    "wall_id": "w63",
+                    "length_m": 1.21
+                },
+                {
+                    "wall_id": "w64",
+                    "length_m": 1.24
+                },
+                {
+                    "wall_id": "w65",
+                    "length_m": 1.05
+                },
+                {
+                    "wall_id": "w66",
+                    "length_m": 1.26
+                },
+                {
+                    "wall_id": "w67",
+                    "length_m": 1.04
+                },
+                {
+                    "wall_id": "w68",
+                    "length_m": 1.37
+                },
+                {
+                    "wall_id": "w69",
+                    "length_m": 1.06
+                },
+                {
+                    "wall_id": "w70",
+                    "length_m": 1.14
+                },
+                {
+                    "wall_id": "w71",
+                    "length_m": 0.79
+                },
+                {
+                    "wall_id": "w72",
+                    "length_m": 1.24
+                },
+                {
+                    "wall_id": "w73",
+                    "length_m": 1.07
+                },
+                {
+                    "wall_id": "w74",
+                    "length_m": 1.53
+                },
+                {
+                    "wall_id": "w75",
+                    "length_m": 0.97
+                },
+                {
+                    "wall_id": "w76",
+                    "length_m": 1.25
+                },
+                {
+                    "wall_id": "w77",
+                    "length_m": 1.19
+                },
+                {
+                    "wall_id": "w78",
+                    "length_m": 1.24
+                },
+                {
+                    "wall_id": "w79",
+                    "length_m": 1.06
+                },
+                {
+                    "wall_id": "w80",
+                    "length_m": 1.22
+                },
+                {
+                    "wall_id": "w81",
+                    "length_m": 0.92
+                },
+                {
+                    "wall_id": "w82",
+                    "length_m": 1.05
+                },
+                {
+                    "wall_id": "w83",
+                    "length_m": 1.04
+                },
+                {
+                    "wall_id": "w84",
+                    "length_m": 1.2
+                },
+                {
+                    "wall_id": "w85",
+                    "length_m": 0.84
+                },
+                {
+                    "wall_id": "w86",
+                    "length_m": 1.0
+                },
+                {
+                    "wall_id": "w87",
+                    "length_m": 1.05
+                },
+                {
+                    "wall_id": "w88",
+                    "length_m": 0.97
+                },
+                {
+                    "wall_id": "w89",
+                    "length_m": 1.06
+                },
+                {
+                    "wall_id": "w90",
+                    "length_m": 1.06
+                },
+                {
+                    "wall_id": "w91",
+                    "length_m": 1.06
+                },
+                {
+                    "wall_id": "w92",
+                    "length_m": 1.04
+                },
+                {
+                    "wall_id": "w93",
+                    "length_m": 0.96
+                },
+                {
+                    "wall_id": "w94",
+                    "length_m": 1.23
+                },
+                {
+                    "wall_id": "w95",
+                    "length_m": 0.55
+                },
+                {
+                    "wall_id": "w96",
+                    "length_m": 1.11
+                },
+                {
+                    "wall_id": "w97",
+                    "length_m": 1.06
+                },
+                {
+                    "wall_id": "w98",
+                    "length_m": 1.03
+                },
+                {
+                    "wall_id": "w99",
+                    "length_m": 0.96
+                },
+                {
+                    "wall_id": "w100",
+                    "length_m": 1.42
+                },
+                {
+                    "wall_id": "w101",
+                    "length_m": 0.64
+                },
+                {
+                    "wall_id": "w102",
+                    "length_m": 0.89
+                },
+                {
+                    "wall_id": "w103",
+                    "length_m": 0.93
+                },
+                {
+                    "wall_id": "w104",
+                    "length_m": 1.05
+                },
+                {
+                    "wall_id": "w105",
+                    "length_m": 0.98
+                },
+                {
+                    "wall_id": "w106",
+                    "length_m": 0.82
+                },
+                {
+                    "wall_id": "w107",
+                    "length_m": 1.02
+                },
+                {
+                    "wall_id": "w108",
+                    "length_m": 1.04
+                },
+                {
+                    "wall_id": "w109",
+                    "length_m": 0.91
+                },
+                {
+                    "wall_id": "w110",
+                    "length_m": 0.88
+                },
+                {
+                    "wall_id": "w111",
+                    "length_m": 0.91
+                },
+                {
+                    "wall_id": "w112",
+                    "length_m": 0.9
+                },
+                {
+                    "wall_id": "w113",
+                    "length_m": 0.54
+                },
+                {
+                    "wall_id": "w114",
+                    "length_m": 0.92
+                },
+                {
+                    "wall_id": "w115",
+                    "length_m": 1.05
+                },
+                {
+                    "wall_id": "w116",
+                    "length_m": 0.77
+                },
+                {
+                    "wall_id": "w117",
+                    "length_m": 1.05
+                },
+                {
+                    "wall_id": "w118",
+                    "length_m": 0.8
+                },
+                {
+                    "wall_id": "w119",
+                    "length_m": 1.04
+                },
+                {
+                    "wall_id": "w120",
+                    "length_m": 0.68
+                },
+                {
+                    "wall_id": "w121",
+                    "length_m": 1.05
+                },
+                {
+                    "wall_id": "w122",
+                    "length_m": 0.77
+                },
+                {
+                    "wall_id": "w123",
+                    "length_m": 0.83
+                },
+                {
+                    "wall_id": "w124",
+                    "length_m": 0.95
+                },
+                {
+                    "wall_id": "w125",
+                    "length_m": 0.52
+                },
+                {
+                    "wall_id": "w126",
+                    "length_m": 0.66
+                },
+                {
+                    "wall_id": "w127",
+                    "length_m": 0.82
+                },
+                {
+                    "wall_id": "w128",
+                    "length_m": 0.58
+                },
+                {
+                    "wall_id": "w129",
+                    "length_m": 0.85
+                },
+                {
+                    "wall_id": "w130",
+                    "length_m": 0.96
                 }
             ],
             "damage_regions": [
@@ -38,9 +550,162 @@
                     "surface_id": "w1",
                     "damage_class": "water_damage",
                     "metric_extent_m2": {
-                        "value": 2.26
+                        "value": 9.06
                     },
-                    "confidence": 0.85
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_2",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 20.62
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_3",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.88
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_4",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 2.72
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_5",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 1.53
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_6",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.11
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_7",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.39
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_8",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.41
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_9",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.33
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_11",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.29
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_12",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.27
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_13",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.21
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_14",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.11
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_15",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.06
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_17",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.09
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_25",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.08
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_26",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.17
+                    },
+                    "confidence": 0.92
+                },
+                {
+                    "damage_id": "dmg_36",
+                    "surface_id": "w1",
+                    "damage_class": "water_damage",
+                    "metric_extent_m2": {
+                        "value": 0.06
+                    },
+                    "confidence": 0.92
                 }
             ]
         }
@@ -48,21 +713,276 @@
     "adjacency_graph": [],
     "concealed_damage_flags": [
         {
-            "flag_id": "FLAG_3c3e0b",
+            "flag_id": "FLAG_c78678",
             "rule_id": "RULE_01",
             "triggering_damage_id": "dmg_1",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_f504c7",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_2",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_d8de25",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_3",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_b4e921",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_4",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_02376a",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_5",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_971777",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_6",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_a79e8e",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_7",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_2fc0f1",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_8",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_0396b2",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_9",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_7733f1",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_11",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_ef2463",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_12",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_338448",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_13",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_fa3f75",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_14",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_c9358f",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_15",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_980d5f",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_17",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_79c850",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_25",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_476949",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_26",
+            "description": "Concealed baseboard & wall cavity moisture",
+            "severity": "critical"
+        },
+        {
+            "flag_id": "FLAG_166afe",
+            "rule_id": "RULE_01",
+            "triggering_damage_id": "dmg_36",
             "description": "Concealed baseboard & wall cavity moisture",
             "severity": "critical"
         }
     ],
     "scope_line_items": [
         {
-            "line_item_id": "LINE_4ab409",
+            "line_item_id": "LINE_a1e1cb",
             "xactimate_code": "WTR MIST",
             "description": "Tear out wet drywall, cleanup",
-            "quantity": 2.26,
+            "quantity": 9.06,
             "unit": "SF",
-            "estimated_cost_usd": 0.79
+            "estimated_cost_usd": 3.17
+        },
+        {
+            "line_item_id": "LINE_71232e",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 20.62,
+            "unit": "SF",
+            "estimated_cost_usd": 7.22
+        },
+        {
+            "line_item_id": "LINE_24b4a0",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.88,
+            "unit": "SF",
+            "estimated_cost_usd": 0.31
+        },
+        {
+            "line_item_id": "LINE_9a0238",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 2.72,
+            "unit": "SF",
+            "estimated_cost_usd": 0.95
+        },
+        {
+            "line_item_id": "LINE_94caa7",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 1.53,
+            "unit": "SF",
+            "estimated_cost_usd": 0.54
+        },
+        {
+            "line_item_id": "LINE_3b0ace",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.11,
+            "unit": "SF",
+            "estimated_cost_usd": 0.04
+        },
+        {
+            "line_item_id": "LINE_9e60f8",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.39,
+            "unit": "SF",
+            "estimated_cost_usd": 0.14
+        },
+        {
+            "line_item_id": "LINE_a112d1",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.41,
+            "unit": "SF",
+            "estimated_cost_usd": 0.14
+        },
+        {
+            "line_item_id": "LINE_bb02cf",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.33,
+            "unit": "SF",
+            "estimated_cost_usd": 0.12
+        },
+        {
+            "line_item_id": "LINE_6392fe",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.29,
+            "unit": "SF",
+            "estimated_cost_usd": 0.1
+        },
+        {
+            "line_item_id": "LINE_464e9a",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.27,
+            "unit": "SF",
+            "estimated_cost_usd": 0.09
+        },
+        {
+            "line_item_id": "LINE_8c5d2a",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.21,
+            "unit": "SF",
+            "estimated_cost_usd": 0.07
+        },
+        {
+            "line_item_id": "LINE_248f6c",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.11,
+            "unit": "SF",
+            "estimated_cost_usd": 0.04
+        },
+        {
+            "line_item_id": "LINE_4724ce",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.06,
+            "unit": "SF",
+            "estimated_cost_usd": 0.02
+        },
+        {
+            "line_item_id": "LINE_2a48ae",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.09,
+            "unit": "SF",
+            "estimated_cost_usd": 0.03
+        },
+        {
+            "line_item_id": "LINE_84fce2",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.08,
+            "unit": "SF",
+            "estimated_cost_usd": 0.03
+        },
+        {
+            "line_item_id": "LINE_c6a12a",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.17,
+            "unit": "SF",
+            "estimated_cost_usd": 0.06
+        },
+        {
+            "line_item_id": "LINE_b88b12",
+            "xactimate_code": "WTR MIST",
+            "description": "Tear out wet drywall, cleanup",
+            "quantity": 0.06,
+            "unit": "SF",
+            "estimated_cost_usd": 0.02
         }
     ]
 }

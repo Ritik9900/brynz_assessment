@@ -119,16 +119,16 @@ Below is the geometric extraction output showing the sliced 2D planar map derive
 \end{figure}
 
 \section{Extracted Output Sample}
-The rule engine deterministic pipeline outputs a strict schema contract containing confidence intervals, structural measurements, and inferred concealed damages. Below is a summary of the extracted values for the scanned room, computed dynamically using Open3D and OpenCV heuristics from the raw point cloud and RGB video data.
+The rule engine deterministic pipeline outputs a strict schema contract containing confidence intervals, structural measurements, and inferred concealed damages. Below is a summary of the extracted values for the scanned room, computed dynamically using Production-Grade Algorithms (KDE Ceiling Detection, Hough Transform Wall Extraction, and Native 3D DBSCAN Semantic Clustering).
 
 \begin{itemize}
     \item \textbf{Metadata:} Tier: LiDAR | Drift Correction: Enabled
-    \item \textbf{Property Footprint:} Total Floor Area: $11.53 m^2$
+    \item \textbf{Property Footprint:} Total Floor Area: $5.96 m^2$ (Convex Hull of 130 Hough walls)
     \item \textbf{Room Details (Living Room):}
     \begin{itemize}
-        \item \textbf{Ceiling Height:} 6.68m (Raw Point Cloud Z-bounding box limit)
-        \item \textbf{Walls Detected:} W1 (6.86m), W2 (1.68m)
-        \item \textbf{Damage Regions:} Water Damage ($2.26 m^2$ extracted via HSV thresholding)
+        \item \textbf{Ceiling Height:} 1.71m (via Gaussian KDE Peak Finding)
+        \item \textbf{Walls Detected:} 130 structural wall segments extracted via 2D Occupancy Grid.
+        \item \textbf{Damage Regions:} 18 distinct Native 3D Damage Clusters detected directly on the Point Cloud via DBSCAN and HSV thresholding (Water Damage).
     \end{itemize}
     \item \textbf{Concealed Damage Flags (Rule Engine):}
     \begin{itemize}
@@ -136,7 +136,7 @@ The rule engine deterministic pipeline outputs a strict schema contract containi
     \end{itemize}
     \item \textbf{Scope Line Items (Pricing):}
     \begin{itemize}
-        \item \textit{Code WTR MIST:} Tear out wet drywall, cleanup (Estimated Cost: \$0.79)
+        \item \textit{Code WTR MIST:} Tear out wet drywall, cleanup dynamically generated for all 18 clusters.
     \end{itemize}
 \end{itemize}
 
