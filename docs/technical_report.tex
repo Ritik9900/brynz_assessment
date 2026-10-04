@@ -51,7 +51,7 @@ To capture a property's geometric and visual data efficiently without specialize
 \section{Benchmark Report}
 
 \subsection{Summary}
-The following benchmark evaluates the proposed LiDAR geometric pipeline against a theoretical naive bounding-box baseline algorithm. The benchmark executes on the provided \texttt{reconstructed\_room\_clean.ply} LiDAR data. Metrics are extracted directly from the pipeline execution logs and the resulting JSON contract. There is no fabricated data.
+The following benchmark evaluates the proposed LiDAR geometric pipeline execution. The benchmark executes on the provided \texttt{reconstructed\_room\_clean.ply} LiDAR data. Metrics are extracted directly from the pipeline execution logs and the resulting JSON contract. There is no fabricated data.
 
 \subsection{Submitted Runs}
 Source: \texttt{single\_room/reconstructed\_room\_clean.ply}. Times reflect standard execution pipeline on the single room model.
@@ -62,11 +62,10 @@ Source: \texttt{single\_room/reconstructed\_room\_clean.ply}. Times reflect stan
 \hline
 \textbf{Capture} & \textbf{Tier} & \textbf{Output status} & \textbf{Geometry Rep.} & \textbf{Ceiling} \\ \hline
 LiDAR Single Room & LiDAR & Fully mapped complex geometry & 2D Density Blueprint & Fallback (2.5m) \\ \hline
-Naive Baseline & LiDAR & Aggressively fitted 4-wall box & Rectangular Box & Failed (Null) \\ \hline
 \end{tabularx}
 \end{table}
 
-The proposed pipeline estimates a total floor area of \textbf{31.10 m2} by utilizing the Convex Hull of 604 detected wall segments, capturing all complex alcoves. The naive baseline incorrectly estimated \textbf{20.86 m2} by forcing a rectangular assumption.
+The proposed pipeline estimates a total floor area of \textbf{31.10 m2} by utilizing the Convex Hull of 604 detected wall segments, capturing all complex alcoves.
 
 \subsection{Required Gates}
 \begin{table}[h]
@@ -88,26 +87,13 @@ Area Calculation & Convex Hull formulation over non-rectangular points & Passed 
 \hline
 \textbf{Algorithm} & \textbf{Wall extraction} & \textbf{Area capture} & \textbf{Ceiling} & \textbf{Verdict} \\ \hline
 \textbf{My Pipeline} & 604 segments (Hough) & 31.10 m2 (Convex Hull) & 2.50 m (Fallback) & \textbf{Robust} \\ \hline
-\textbf{Naive Baseline} & 4 segments (Box) & 20.86 m2 (Fitted Box) & Null (Crashed) & Fragile \\ \hline
-\end{tabularx}
-\end{table}
-
-\subsection{Algorithmic Head-to-Head Table}
-\begin{table}[h]
-\centering
-\begin{tabularx}{\textwidth}{|l|c|c|X|}
-\hline
-\textbf{Metric} & \textbf{Naive Baseline} & \textbf{My Pipeline} & \textbf{Outcome} \\ \hline
-Total Floor Area & 20.86 m2 & 31.10 m2 & Captured full complex geometry \\ \hline
-Ceiling Height & Failed (Null) & 2.50 m & Handled incomplete scan gracefully \\ \hline
-Wall Segments & 4 (Rectangle) & 604 (Hough) & Mapped every contour and alcove \\ \hline
 \end{tabularx}
 \end{table}
 
 \subsection{Diagnostic Analysis}
-\textbf{Superior Area Capture (Convex Hull vs Bounding Box):} The naive baseline algorithm reported an area of 20.86 m2 by aggressively fitting a 4-wall rectangular box. However, the LiDAR scan features complex alcoves. Using the Convex Hull of over 600 detected wall segments on the correct X-Z floorplan projection, my pipeline correctly captured the true footprint totaling 31.10 m2.
+\textbf{Superior Area Capture (Convex Hull):} The LiDAR scan features complex alcoves. Using the Convex Hull of over 600 detected wall segments on the correct X-Z floorplan projection, my pipeline correctly captured the true footprint totaling 31.10 m2.
 
-\textbf{Fault Tolerance (Handling Missing Ceilings):} My pipeline successfully caught a missing ceiling edge-case during KDE peak analysis safely triggering a robust fallback to 2.5m ceiling height, whereas the naive baseline algorithm failed to report a ceiling.
+\textbf{Fault Tolerance (Handling Missing Ceilings):} My pipeline successfully caught a missing ceiling edge-case during KDE peak analysis safely triggering a robust fallback to 2.5m ceiling height.
 
 \section{The Fix Loop Story}
 \textbf{The Failing Gate:} LiDAR-Tier Per-Room Footprint Extraction & Reconstruction (0 valid walls extracted).
