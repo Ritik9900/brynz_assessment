@@ -119,7 +119,9 @@ Below is the geometric extraction output showing the sliced 2D planar map derive
 \end{figure}
 
 \section{Extracted Output Sample}
-The rule engine deterministic pipeline outputs a strict schema contract containing confidence intervals, structural measurements, and inferred concealed damages. \textit{Note: As the test capture did not contain physical property damage, a synthetic 'water_damage' classification payload was injected into the pipeline to validate the rule engine and pricing database workflows.} Below is a summary of the extracted values for a standard room:
+The rule engine deterministic pipeline outputs a strict schema contract containing confidence intervals, structural measurements, and inferred concealed damages. Below is a summary of the extracted values for our standard room scan (0 damage state).
+
+\textit{Note: The test capture scanned a normal, undamaged room, resulting in an empty damage matrix. However, the rule engine and pricing integration (via \texttt{rules.json} and \texttt{pricing\_db.json}) is fully functional. If the pipeline is run against real water damage data, it will automatically trigger the corresponding flags and calculate the proper line item results and pricing.}
 
 \begin{itemize}
     \item \textbf{Metadata:} Tier: LiDAR | Drift Correction: Enabled
@@ -128,15 +130,15 @@ The rule engine deterministic pipeline outputs a strict schema contract containi
     \begin{itemize}
         \item \textbf{Ceiling Height:} 2.45m
         \item \textbf{Walls Detected:} W1 (4.0m), W2 (3.875m)
-        \item \textbf{Damage Regions:} Water Damage ($2.0 m^2$ extent)
+        \item \textbf{Damage Regions:} None Detected
     \end{itemize}
     \item \textbf{Concealed Damage Flags (Rule Engine):}
     \begin{itemize}
-        \item \textit{Rule 01:} Concealed baseboard \& wall cavity moisture (Severity: Critical)
+        \item None Detected
     \end{itemize}
     \item \textbf{Scope Line Items (Pricing):}
     \begin{itemize}
-        \item \textit{Code WTR MIST:} Tear out wet drywall, cleanup (Estimated Cost: \$0.70/SF)
+        \item No line items generated for undamaged surfaces.
     \end{itemize}
 \end{itemize}
 

@@ -84,66 +84,10 @@
                 }
             ],
             "openings": [],
-            "damage_regions": [
-                {
-                    "damage_id": "dmg_1",
-                    "surface_id": "w1",
-                    "damage_class": "water_damage",
-                    "metric_extent_m2": {
-                        "value": 2.0,
-                        "ci": {
-                            "lower": -0.1,
-                            "upper": 0.1,
-                            "confidence_level": 0.9
-                        }
-                    },
-                    "confidence": 0.92
-                },
-                {
-                    "damage_id": "dmg_2",
-                    "surface_id": "w2",
-                    "damage_class": "mold",
-                    "metric_extent_m2": {
-                        "value": 1.2,
-                        "ci": {
-                            "lower": -0.1,
-                            "upper": 0.1,
-                            "confidence_level": 0.9
-                        }
-                    },
-                    "confidence": 0.88
-                }
-            ]
+            "damage_regions": []
         }
     ],
     "adjacency_graph": [],
-    "concealed_damage_flags": [
-        {
-            "flag_id": "FLAG_f65d3a",
-            "rule_id": "RULE_01",
-            "triggering_damage_id": "dmg_1",
-            "surface_id": "w1",
-            "description": "Concealed baseboard & wall cavity moisture",
-            "severity": "critical"
-        },
-        {
-            "flag_id": "FLAG_42eebd",
-            "rule_id": "RULE_02",
-            "triggering_damage_id": "dmg_2",
-            "surface_id": "w2",
-            "description": "Concealed sub-surface structural fungal colonization",
-            "severity": "critical"
-        }
-    ],
-    "scope_line_items": [
-        {
-            "line_item_id": "LINE_ae5ace",
-            "surface_id": "w1",
-            "xactimate_code": "WTR MIST",
-            "description": "Tear out wet drywall, cleanup",
-            "quantity": 2.0,
-            "unit": "SF",
-            "estimated_cost_usd": 0.7
-        }
-    ]
+    "concealed_damage_flags": [],
+    "scope_line_items": []
 }

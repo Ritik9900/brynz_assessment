@@ -18,10 +18,7 @@ ROOMS_DATA = [
             {"wall_id": "w4", "start_point": [0,3.875], "end_point": [0,0], "length_m": 3.875}
         ],
         "openings": [],
-        "simulated_damage": [
-            {"id": "dmg_1", "surface_id": "w1", "class": "water_damage", "metric_extent_m2": 2.0, "lower_boundary_z": 0.15, "confidence": 0.92},
-            {"id": "dmg_2", "surface_id": "w2", "class": "mold", "metric_extent_m2": 1.2, "lower_boundary_z": 1.0, "confidence": 0.88}
-        ]
+        "simulated_damage": []
     }
 ]
 
