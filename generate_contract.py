@@ -23,7 +23,7 @@ def extract_production_geometry(ply_path):
     
     # Calculate Area based on extracted robust walls
     if not walls:
-        return 0, 0, []
+        return 0, 0, [], pcd
         
     points = []
     wall_data = []
@@ -77,8 +77,8 @@ def extract_production_damage(pcd):
         max_bounds = np.max(cluster, axis=0)
         extent = max_bounds - min_bounds
         
-        # Calculate surface area (assuming flat projection on wall X-Z or Y-Z plane)
-        area_m2 = float(extent[0] * extent[2]) if extent[0] > extent[1] else float(extent[1] * extent[2])
+        # Calculate surface area (assuming flat projection on wall X-Y or Z-Y plane)
+        area_m2 = float(extent[1] * max(extent[0], extent[2]))
         if area_m2 > 0.05: # Minimum 0.05 sq meters of damage to report
             damages.append({
                 "id": f"dmg_{i+1}", 
