@@ -102,36 +102,27 @@ def main():
         length = np.linalg.norm(p2 - p1)
         print(f"Wall {i+1}: Start({p1[0]:.2f}, {p1[1]:.2f}) -> End({p2[0]:.2f}, {p2[1]:.2f}) | Length: {length:.2f} m")
         
-    if args.plot and len(walls) > 0:
-        plt.figure(figsize=(8, 8))
+    if args.plot:
+        print("\nRendering Blueprint-Style 2D Floor Plan...")
+        plt.figure(figsize=(10, 10))
         
-        # Collect all points to compute the Convex Hull (clean floorplan outline)
-        all_points = []
-        for p1, p2 in walls:
-            all_points.append(p1)
-            all_points.append(p2)
-        all_points = np.array(all_points, dtype=np.float32)
+        # Get all points
+        all_points = np.asarray(pcd.points)
+        x_vals = all_points[:, 0]
+        y_vals = all_points[:, 1]
         
-        hull = cv2.convexHull(all_points)
-        hull_points = hull.reshape(-1, 2)
+        # Create a 2D histogram density plot (blueprint style)
+        plt.hist2d(x_vals, y_vals, bins=250, cmap='Blues', cmin=1)
         
-        # Close the polygon by appending the first point at the end
-        hull_points = np.vstack([hull_points, hull_points[0]])
-        
-        # Plot clean filled polygon outline
-        plt.plot(hull_points[:, 0], hull_points[:, 1], 'b-', linewidth=3, label="Room Boundary")
-        plt.fill(hull_points[:, 0], hull_points[:, 1], alpha=0.3, color='blue', label="Walkable Area")
-        plt.scatter(hull_points[:, 0], hull_points[:, 1], c='red', s=50, label="Vertices", zorder=5)
-        
-        plt.title("Extracted 2D Floorplan (Convex Hull)")
-        plt.xlabel("X (meters)")
-        plt.ylabel("Y (meters)")
+        plt.title("Rendered 2D Floor Plan (Extracted)", fontsize=16)
+        plt.xlabel("X (meters)", fontsize=12)
+        plt.ylabel("Y (meters)", fontsize=12)
         plt.axis('equal')
-        plt.grid(True, linestyle='--', alpha=0.7)
-        plt.legend()
+        plt.grid(True, linestyle='--', alpha=0.5)
+        
         plot_path = "output_walls.png"
-        plt.savefig(plot_path)
-        print(f"\nSaved 2D floorplan visualization to {plot_path}")
+        plt.savefig(plot_path, dpi=300, bbox_inches='tight')
+        print(f"Saved Blueprint 2D floorplan visualization to {plot_path}")
 
 if __name__ == "__main__":
     main()
