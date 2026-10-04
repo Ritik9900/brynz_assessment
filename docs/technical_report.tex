@@ -118,47 +118,27 @@ Below is the geometric extraction output showing the sliced 2D planar map derive
     \caption{Automatically extracted 2D blueprint from the LiDAR point cloud.}
 \end{figure}
 
-\section{Extracted Output Sample (JSON Contract)}
-The rule engine deterministic pipeline outputs a strict JSON schema contract containing confidence intervals, structural measurements, and inferred concealed damages. Below is an abbreviated snippet of the final result for a processed room:
+\section{Extracted Output Sample}
+The rule engine deterministic pipeline outputs a strict schema contract containing confidence intervals, structural measurements, and inferred concealed damages. Below is a summary of the extracted values for a standard room:
 
-\begin{verbatim}
-{
-  "capture_metadata": {
-    "tier": "lidar",
-    "drift_correction_enabled": true
-  },
-  "property_footprint": {
-    "total_floor_area_m2": 15.5
-  },
-  "rooms": [
-    {
-      "room_id": "single_room",
-      "label": "Living Room",
-      "ceiling_height_m": { "value": 2.45 },
-      "walls": [
-        { "wall_id": "w1", "length_m": 4.0 },
-        { "wall_id": "w2", "length_m": 3.875 }
-      ],
-      "damage_regions": [
-        { "damage_class": "water_damage", "metric_extent_m2": { "value": 2.0 } }
-      ]
-    }
-  ],
-  "concealed_damage_flags": [
-    {
-      "rule_id": "RULE_01",
-      "description": "Concealed baseboard & wall cavity moisture",
-      "severity": "critical"
-    }
-  ],
-  "scope_line_items": [
-    {
-      "xactimate_code": "WTR MIST",
-      "estimated_cost_usd": 0.7
-    }
-  ]
-}
-\end{verbatim}
+\begin{itemize}
+    \item \textbf{Metadata:} Tier: LiDAR | Drift Correction: Enabled
+    \item \textbf{Property Footprint:} Total Floor Area: $15.5 m^2$
+    \item \textbf{Room Details (Living Room):}
+    \begin{itemize}
+        \item \textbf{Ceiling Height:} 2.45m
+        \item \textbf{Walls Detected:} W1 (4.0m), W2 (3.875m)
+        \item \textbf{Damage Regions:} Water Damage ($2.0 m^2$ extent)
+    \end{itemize}
+    \item \textbf{Concealed Damage Flags (Rule Engine):}
+    \begin{itemize}
+        \item \textit{Rule 01:} Concealed baseboard \& wall cavity moisture (Severity: Critical)
+    \end{itemize}
+    \item \textbf{Scope Line Items (Pricing):}
+    \begin{itemize}
+        \item \textit{Code WTR MIST:} Tear out wet drywall, cleanup (Estimated Cost: \$0.70/SF)
+    \end{itemize}
+\end{itemize}
 
 \end{document}
 
