@@ -118,5 +118,58 @@ Below is the geometric extraction output showing the sliced 2D planar map derive
     \caption{Automatically extracted 2D blueprint from the LiDAR point cloud.}
 \end{figure}
 
+\section{Extracted Output Sample (JSON Contract)}
+The rule engine deterministic pipeline outputs a strict JSON schema contract containing confidence intervals, structural measurements, and inferred concealed damages. Below is an abbreviated snippet of the final result for a processed room:
+
+\begin{verbatim}
+{
+  "capture_metadata": {
+    "tier": "lidar",
+    "drift_correction_enabled": true
+  },
+  "property_footprint": {
+    "total_floor_area_m2": 15.5
+  },
+  "rooms": [
+    {
+      "room_id": "single_room",
+      "label": "Living Room",
+      "ceiling_height_m": { "value": 2.45 },
+      "walls": [
+        { "wall_id": "w1", "length_m": 4.0 },
+        { "wall_id": "w2", "length_m": 3.875 }
+      ],
+      "damage_regions": [
+        { "damage_class": "water_damage", "metric_extent_m2": { "value": 2.0 } }
+      ]
+    }
+  ],
+  "concealed_damage_flags": [
+    {
+      "rule_id": "RULE_01",
+      "description": "Concealed baseboard & wall cavity moisture",
+      "severity": "critical"
+    }
+  ],
+  "scope_line_items": [
+    {
+      "xactimate_code": "WTR MIST",
+      "estimated_cost_usd": 0.7
+    }
+  ]
+}
+\end{verbatim}
+
+\section{3D Point Cloud Visualizations}
+The raw unprojected LiDAR depth maps are compiled into the following dense 3D point cloud structures, visible within any standard viewer (e.g., MeshLab or Open3D).
+
+\begin{figure}[h]
+    \centering
+    % USER: Upload your screenshots to Overleaf and uncomment the lines below to show them!
+    % \includegraphics[width=0.45\textwidth]{room1_ply_screenshot.png}
+    % \includegraphics[width=0.45\textwidth]{room2_ply_screenshot.png}
+    \caption{3D representations of the generated .ply point clouds (Placeholder for Overleaf upload).}
+\end{figure}
+
 \end{document}
 
